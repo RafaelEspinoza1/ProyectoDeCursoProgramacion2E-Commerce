@@ -22,8 +22,9 @@ namespace ProyectoDeCursoE_commerce
             try
             {
                 MessageBox.Show("E-Commerce le desea buen dia, vuelva pronto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DialogResult = DialogResult.OK;
-                Close();
+                this.Tag = "FormInicio";
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex) 
             {

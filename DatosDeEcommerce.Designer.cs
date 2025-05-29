@@ -1,6 +1,6 @@
 ﻿namespace ProyectoDeCursoE_commerce
 {
-    partial class PaginaPrincipal
+    partial class DatosDeEcommerce
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCerrarSesion = new Button();
-            label1 = new Label();
             SuspendLayout();
             // 
-            // btnCerrarSesion
-            // 
-            btnCerrarSesion.Location = new Point(198, 94);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(90, 23);
-            btnCerrarSesion.TabIndex = 0;
-            btnCerrarSesion.Text = "Cerrar sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
-            btnCerrarSesion.Click += btnCerrarSesion_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(74, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
-            // 
-            // PaginaPrincipal
+            // DatosDeEcommerce
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(btnCerrarSesion);
-            Name = "PaginaPrincipal";
-            Text = "PaginaPrincipal";
+            Name = "DatosDeEcommerce";
+            Text = "DatosDeEcommerce";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button btnCerrarSesion;
-        private Label label1;
     }
 }

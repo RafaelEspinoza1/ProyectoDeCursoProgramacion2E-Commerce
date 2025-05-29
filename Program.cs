@@ -13,19 +13,32 @@ namespace ProyectoDeCursoE_commerce
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Metodo para que cuando se abra el form PaginaPrincipal, se cierre el form FormInicio, y vicebersa.
+            // Metodo para que cuando se abra el form PaginaPrincipal, se cierre el form FormInicio, y vicebersa, y que cuando se entre al form DatoaDeEcommerce se cierre FormInicio y pase este como pricipal.
+            string siguienteForm = "FormInicio";
+
             while (true)
             {
-                FormInicio form1 = new FormInicio();
-                if (form1.ShowDialog() == DialogResult.OK)
+                Form formularioActual = siguienteForm switch
                 {
-                    PaginaPrincipal form2 = new PaginaPrincipal();
-                    if (form2.ShowDialog() != DialogResult.OK)
-                        break;
+                    "FormInicio" => new FormInicio(),
+                    "PaginaPrincipal" => new PaginaPrincipal(),
+                    "Administrador" => new Administrador(),
+                    _ => null
+                };
+
+                if (formularioActual == null)
+                    break;
+
+                DialogResult resultado = formularioActual.ShowDialog();
+
+                // Si el formulario indica cuál sigue, lo tomamos
+                if (formularioActual.Tag is string siguiente && !string.IsNullOrEmpty(siguiente))
+                {
+                    siguienteForm = siguiente;
                 }
                 else
                 {
-                    break;
+                    break; // salir de la aplicación
                 }
             }
         }

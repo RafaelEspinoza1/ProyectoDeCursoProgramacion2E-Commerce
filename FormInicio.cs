@@ -8,6 +8,10 @@ namespace ProyectoDeCursoE_commerce
             toolTip1.SetToolTip(pictureBoxConfig, "Opciones");
             toolTip1.SetToolTip(pictureBoxCerrarInicioSesion, "Cerrar");
             toolTip1.SetToolTip(txtCorreo, "Correo electronico");
+            toolTip1.SetToolTip(pictureBoxCerrarOpciones, "Cerrar");
+            toolTip1.SetToolTip(pictureBoxAdmin, "Solo admin");
+            toolTip1.SetToolTip(pictureBoxCerrarRegistro, "Cerrar");
+            toolTip1.SetToolTip(txtCorreoRegistro, "Correo electronico");
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -32,6 +36,8 @@ namespace ProyectoDeCursoE_commerce
                 groupBoxRegristrarse.Visible = false;
                 btnIniciarSesion.Visible = true;
                 btnRegistrase.Visible = true;
+                flowLayoutPanelOpciones.Visible = false;
+                pictureBoxConfig.Visible = true;
             }
             catch (Exception ex)
             {
@@ -81,24 +87,38 @@ namespace ProyectoDeCursoE_commerce
 
             // Si pasa todas las validaciones
             MessageBox.Show("Bienvenido a E-Commerce", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DialogResult = DialogResult.OK;
-            Close();
+            this.Tag = "PaginaPrincipal";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
-        
 
-       
+
+
         private void btnTerminarRegistro_Click(object sender, EventArgs e)
         {
+            // Obtener los valores de los campos de texto y los guarda en variables
             string nombre = txtNombre.Text.Trim();
             string apellido = txtApellido.Text.Trim();
             string correo = txtCorreoRegistro.Text.Trim();
             string contraseña = txtContraseñaRegistro.Text.Trim();
-            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña))
+            string telefono = mtxtTelefono.Text.Trim();
+
+            // Validar que los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contraseña) || string.IsNullOrWhiteSpace(telefono))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Validar que la contraseña tenga al menos 8 caracteres
+            if (contraseña.Length < 8)
+            {
+                MessageBox.Show("La contraseña debe tener al menos 8 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtContraseñaRegistro.Focus();
+                return;
+            }
+
+            // Validar el formato del correo electrónico
             string[] dominiosPermitidos = { "@gmail.com", "@hotmail.com", "@yahoo.com" };
 
             // Verificar si el correo termina en alguno de los dominios permitidos
@@ -122,8 +142,37 @@ namespace ProyectoDeCursoE_commerce
 
             // Si pasa todas las validaciones
             MessageBox.Show("Bienvenido a E-Commerce", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DialogResult = DialogResult.OK;
-            Close();
+            this.Tag = "PaginaPrincipal";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void pictureBoxConfig_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelOpciones.Visible = true;
+            pictureBoxConfig.Visible = false;
+            groupBoxInicioDeSesion.Visible = false;
+            groupBoxRegristrarse.Visible = false;
+            btnIniciarSesion.Visible = true;
+            btnRegistrase.Visible = true;
+        }
+
+        private void btnEcommerce_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("E-Commerce es una tienda en linea disponible para .....", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnPreguntas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("¿Que puedes hacer en E-Commerce? Comprar, verder, ....", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureBoxAdmin_Click(object sender, EventArgs e)
+        {
+            this.Tag = "Administrador";
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+
         }
     }
 }

@@ -83,6 +83,16 @@ namespace ProyectoDeCursoE_commerce.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hacker {
+            get {
+                object obj = ResourceManager.GetObject("hacker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LogoEcommerce {
             get {
                 object obj = ResourceManager.GetObject("LogoEcommerce", resourceCulture);
