@@ -5,13 +5,22 @@ namespace ProyectoDeCursoE_commerce
         public FormInicio()
         {
             InitializeComponent();
-            toolTip1.SetToolTip(pictureBoxConfig, "Opciones");
-            toolTip1.SetToolTip(pictureBoxCerrarInicioSesion, "Cerrar");
+            toolTip1.SetToolTip(btnConfig, "Opciones");
+            toolTip1.SetToolTip(btnCerrarInicioSesion, "Cerrar");
             toolTip1.SetToolTip(txtCorreo, "Correo electronico");
-            toolTip1.SetToolTip(pictureBoxCerrarOpciones, "Cerrar");
-            toolTip1.SetToolTip(pictureBoxAdmin, "Solo admin");
-            toolTip1.SetToolTip(pictureBoxCerrarRegistro, "Cerrar");
+            toolTip1.SetToolTip(btnCerrarOpciones, "Cerrar");
+            toolTip1.SetToolTip(btnAdmin, "Solo admin");
+            toolTip1.SetToolTip(btnCerrarRegistro, "Cerrar");
             toolTip1.SetToolTip(txtCorreoRegistro, "Correo electronico");
+            toolTip1.SetToolTip(checkBoxContraseñaRegistroVisible, "Hacer visible Contraseña");
+            toolTip1.SetToolTip(checkBoxContraseñaInicioDeSesionVisible, "Hacer visible Contraseña");
+            // Esto sirve para que la contraseña se muestre como puntos
+            txtContraseñaRegistro.UseSystemPasswordChar = true;
+            txtContraseñaRegistro.ContextMenuStrip = null; // Desactiva click derecho
+            txtContraseñaRegistro.ShortcutsEnabled = false; // Desactiva Ctrl+C, Ctrl+X, Ctrl+V
+            txtContraseña.UseSystemPasswordChar = true;
+            txtContraseña.ContextMenuStrip = null; // Desactiva click derecho
+            txtContraseña.ShortcutsEnabled = false; // Desactiva Ctrl+C, Ctrl+X, Ctrl+V
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -28,7 +37,7 @@ namespace ProyectoDeCursoE_commerce
 
         }
 
-        private void pictureBoxCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -37,7 +46,14 @@ namespace ProyectoDeCursoE_commerce
                 btnIniciarSesion.Visible = true;
                 btnRegistrase.Visible = true;
                 flowLayoutPanelOpciones.Visible = false;
-                pictureBoxConfig.Visible = true;
+                btnConfig.Visible = true;
+                txtApellido.Clear();
+                txtContraseñaRegistro.Clear();
+                txtCorreoRegistro.Clear();
+                txtNombre.Clear();
+                mtxtTelefono.Clear();
+                txtCorreo.Clear();
+                txtContraseña.Clear();
             }
             catch (Exception ex)
             {
@@ -47,10 +63,18 @@ namespace ProyectoDeCursoE_commerce
 
         private void btnRegistrase_Click(object sender, EventArgs e)
         {
+            try
+            {
+                groupBoxRegristrarse.Visible = true;
+                btnRegistrase.Visible = false;
+                btnIniciarSesion.Visible = false;
+            }catch(Exception ex)
+            {
+                MessageBox.Show($"Error inesperado al registrarte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            groupBoxRegristrarse.Visible = true;
-            btnRegistrase.Visible = false;
-            btnIniciarSesion.Visible = false;
+
+
         }
 
         // Cierra el formulario y abre el formulario PaginaPrincipal.
@@ -147,10 +171,10 @@ namespace ProyectoDeCursoE_commerce
             this.Close();
         }
 
-        private void pictureBoxConfig_Click(object sender, EventArgs e)
+        private void btnConfig_Click(object sender, EventArgs e)
         {
             flowLayoutPanelOpciones.Visible = true;
-            pictureBoxConfig.Visible = false;
+            btnConfig.Visible = false;
             groupBoxInicioDeSesion.Visible = false;
             groupBoxRegristrarse.Visible = false;
             btnIniciarSesion.Visible = true;
@@ -167,13 +191,42 @@ namespace ProyectoDeCursoE_commerce
             MessageBox.Show("¿Que puedes hacer en E-Commerce? Comprar, verder, ....", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void pictureBoxAdmin_Click(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
-            this.Tag = "Administrador";
-            this.DialogResult = DialogResult.OK;
+            this.Tag = "Administracion";
+            this.DialogResult = DialogResult.OK; 
             this.Close();
 
         }
+
+        // Hace vicible la contraseña en el registro y viceversa
+        private void checkBoxContraseñaRegistroVisible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxContraseñaRegistroVisible.Checked)
+            {
+                // Mostrar el texto
+                txtContraseñaRegistro.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                // Ocultar el texto
+                txtContraseñaRegistro.UseSystemPasswordChar = true;
+            }
+        }
+        private void checkBoxContraseñaInicioDeSesionVisible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxContraseñaInicioDeSesionVisible.Checked)
+            {
+                // Mostrar el texto
+                txtContraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                // Ocultar el texto
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+        }
+
     }
 }
  

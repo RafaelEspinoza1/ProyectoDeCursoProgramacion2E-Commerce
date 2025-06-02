@@ -29,62 +29,67 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
+            lblTitulo = new Label();
             pictureBoxLogo = new PictureBox();
             btnRegistrase = new Button();
             btnIniciarSesion = new Button();
-            pictureBoxConfig = new PictureBox();
             groupBoxInicioDeSesion = new GroupBox();
-            label3 = new Label();
-            label2 = new Label();
+            checkBoxContraseñaInicioDeSesionVisible = new CheckBox();
+            btnCerrarInicioSesion = new Button();
+            lblCorrreoInicioSesion = new Label();
+            lblContraseInicioSesion = new Label();
             txtCorreo = new TextBox();
             txtContraseña = new TextBox();
-            pictureBoxCerrarInicioSesion = new PictureBox();
             btnEntrar = new Button();
-            toolTip1 = new ToolTip(components);
             groupBoxRegristrarse = new GroupBox();
-            pictureBoxCerrarRegistro = new PictureBox();
-            label8 = new Label();
+            btnCerrarRegistro = new Button();
+            checkBoxContraseñaRegistroVisible = new CheckBox();
+            lblTelefonoRegistro = new Label();
             mtxtTelefono = new MaskedTextBox();
             btnTerminarRegistro = new Button();
             txtContraseñaRegistro = new TextBox();
-            label7 = new Label();
+            lblContraseñaRegistro = new Label();
             txtCorreoRegistro = new TextBox();
-            label6 = new Label();
+            lblCorreoRegistro = new Label();
             txtApellido = new TextBox();
             txtNombre = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
+            lblApellidoRegistro = new Label();
+            lblNombreRegistro = new Label();
+            toolTip1 = new ToolTip(components);
             flowLayoutPanelOpciones = new FlowLayoutPanel();
-            groupBoxCerrarOpciones = new GroupBox();
-            pictureBoxAdmin = new PictureBox();
-            pictureBoxCerrarOpciones = new PictureBox();
+            btnAdmin = new Button();
+            btnCerrarOpciones = new Button();
             btnEcommerce = new Button();
             btnPreguntas = new Button();
             label9 = new Label();
-            label10 = new Label();
-            linkLabel1 = new LinkLabel();
+            lblNumeroEcommerce = new Label();
+            linklblCorreoEcommerce = new LinkLabel();
+            btnConfig = new Button();
+            pictureBoxMascotaSaluda = new PictureBox();
+            panelSuperior = new Panel();
+            panelGeneral = new Panel();
+            panelCerrarOpciones = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxConfig).BeginInit();
             groupBoxInicioDeSesion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarInicioSesion).BeginInit();
             groupBoxRegristrarse.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarRegistro).BeginInit();
             flowLayoutPanelOpciones.SuspendLayout();
-            groupBoxCerrarOpciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAdmin).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarOpciones).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMascotaSaluda).BeginInit();
+            panelSuperior.SuspendLayout();
+            panelGeneral.SuspendLayout();
+            panelCerrarOpciones.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Script MT Bold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(101, 23);
-            label1.TabIndex = 0;
-            label1.Text = "E-Commerce";
+            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.Font = new Font("Script MT Bold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = SystemColors.ControlText;
+            lblTitulo.Location = new Point(12, 9);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(101, 23);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "E-Commerce";
             // 
             // pictureBoxLogo
             // 
@@ -116,24 +121,14 @@
             btnIniciarSesion.UseVisualStyleBackColor = true;
             btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
-            // pictureBoxConfig
-            // 
-            pictureBoxConfig.Image = Properties.Resources.config;
-            pictureBoxConfig.Location = new Point(334, 367);
-            pictureBoxConfig.Name = "pictureBoxConfig";
-            pictureBoxConfig.Size = new Size(48, 25);
-            pictureBoxConfig.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxConfig.TabIndex = 4;
-            pictureBoxConfig.TabStop = false;
-            pictureBoxConfig.Click += pictureBoxConfig_Click;
-            // 
             // groupBoxInicioDeSesion
             // 
-            groupBoxInicioDeSesion.Controls.Add(label3);
-            groupBoxInicioDeSesion.Controls.Add(label2);
+            groupBoxInicioDeSesion.Controls.Add(checkBoxContraseñaInicioDeSesionVisible);
+            groupBoxInicioDeSesion.Controls.Add(btnCerrarInicioSesion);
+            groupBoxInicioDeSesion.Controls.Add(lblCorrreoInicioSesion);
+            groupBoxInicioDeSesion.Controls.Add(lblContraseInicioSesion);
             groupBoxInicioDeSesion.Controls.Add(txtCorreo);
             groupBoxInicioDeSesion.Controls.Add(txtContraseña);
-            groupBoxInicioDeSesion.Controls.Add(pictureBoxCerrarInicioSesion);
             groupBoxInicioDeSesion.Controls.Add(btnEntrar);
             groupBoxInicioDeSesion.Location = new Point(81, 150);
             groupBoxInicioDeSesion.Name = "groupBoxInicioDeSesion";
@@ -143,23 +138,45 @@
             groupBoxInicioDeSesion.Text = "Inicio de seción";
             groupBoxInicioDeSesion.Visible = false;
             // 
-            // label3
+            // checkBoxContraseñaInicioDeSesionVisible
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(7, 37);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 9;
-            label3.Text = "Correo";
+            checkBoxContraseñaInicioDeSesionVisible.AutoSize = true;
+            checkBoxContraseñaInicioDeSesionVisible.BackgroundImageLayout = ImageLayout.None;
+            checkBoxContraseñaInicioDeSesionVisible.Location = new Point(187, 74);
+            checkBoxContraseñaInicioDeSesionVisible.Name = "checkBoxContraseñaInicioDeSesionVisible";
+            checkBoxContraseñaInicioDeSesionVisible.Size = new Size(15, 14);
+            checkBoxContraseñaInicioDeSesionVisible.TabIndex = 17;
+            checkBoxContraseñaInicioDeSesionVisible.UseVisualStyleBackColor = true;
+            checkBoxContraseñaInicioDeSesionVisible.CheckedChanged += checkBoxContraseñaInicioDeSesionVisible_CheckedChanged;
             // 
-            // label2
+            // btnCerrarInicioSesion
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(7, 74);
-            label2.Name = "label2";
-            label2.Size = new Size(67, 15);
-            label2.TabIndex = 8;
-            label2.Text = "Contraseña";
+            btnCerrarInicioSesion.BackgroundImage = Properties.Resources.cerrar;
+            btnCerrarInicioSesion.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCerrarInicioSesion.Location = new Point(186, 9);
+            btnCerrarInicioSesion.Name = "btnCerrarInicioSesion";
+            btnCerrarInicioSesion.Size = new Size(31, 31);
+            btnCerrarInicioSesion.TabIndex = 17;
+            btnCerrarInicioSesion.UseVisualStyleBackColor = true;
+            btnCerrarInicioSesion.Click += btnCerrar_Click;
+            // 
+            // lblCorrreoInicioSesion
+            // 
+            lblCorrreoInicioSesion.AutoSize = true;
+            lblCorrreoInicioSesion.Location = new Point(7, 37);
+            lblCorrreoInicioSesion.Name = "lblCorrreoInicioSesion";
+            lblCorrreoInicioSesion.Size = new Size(43, 15);
+            lblCorrreoInicioSesion.TabIndex = 9;
+            lblCorrreoInicioSesion.Text = "Correo";
+            // 
+            // lblContraseInicioSesion
+            // 
+            lblContraseInicioSesion.AutoSize = true;
+            lblContraseInicioSesion.Location = new Point(7, 74);
+            lblContraseInicioSesion.Name = "lblContraseInicioSesion";
+            lblContraseInicioSesion.Size = new Size(67, 15);
+            lblContraseInicioSesion.TabIndex = 8;
+            lblContraseInicioSesion.Text = "Contraseña";
             // 
             // txtCorreo
             // 
@@ -175,17 +192,6 @@
             txtContraseña.Size = new Size(100, 23);
             txtContraseña.TabIndex = 7;
             // 
-            // pictureBoxCerrarInicioSesion
-            // 
-            pictureBoxCerrarInicioSesion.Image = Properties.Resources.cerrar;
-            pictureBoxCerrarInicioSesion.Location = new Point(188, 9);
-            pictureBoxCerrarInicioSesion.Name = "pictureBoxCerrarInicioSesion";
-            pictureBoxCerrarInicioSesion.Size = new Size(25, 25);
-            pictureBoxCerrarInicioSesion.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCerrarInicioSesion.TabIndex = 1;
-            pictureBoxCerrarInicioSesion.TabStop = false;
-            pictureBoxCerrarInicioSesion.Click += pictureBoxCerrar_Click;
-            // 
             // btnEntrar
             // 
             btnEntrar.Location = new Point(68, 103);
@@ -198,18 +204,19 @@
             // 
             // groupBoxRegristrarse
             // 
-            groupBoxRegristrarse.Controls.Add(pictureBoxCerrarRegistro);
-            groupBoxRegristrarse.Controls.Add(label8);
+            groupBoxRegristrarse.Controls.Add(btnCerrarRegistro);
+            groupBoxRegristrarse.Controls.Add(checkBoxContraseñaRegistroVisible);
+            groupBoxRegristrarse.Controls.Add(lblTelefonoRegistro);
             groupBoxRegristrarse.Controls.Add(mtxtTelefono);
             groupBoxRegristrarse.Controls.Add(btnTerminarRegistro);
             groupBoxRegristrarse.Controls.Add(txtContraseñaRegistro);
-            groupBoxRegristrarse.Controls.Add(label7);
+            groupBoxRegristrarse.Controls.Add(lblContraseñaRegistro);
             groupBoxRegristrarse.Controls.Add(txtCorreoRegistro);
-            groupBoxRegristrarse.Controls.Add(label6);
+            groupBoxRegristrarse.Controls.Add(lblCorreoRegistro);
             groupBoxRegristrarse.Controls.Add(txtApellido);
             groupBoxRegristrarse.Controls.Add(txtNombre);
-            groupBoxRegristrarse.Controls.Add(label5);
-            groupBoxRegristrarse.Controls.Add(label4);
+            groupBoxRegristrarse.Controls.Add(lblApellidoRegistro);
+            groupBoxRegristrarse.Controls.Add(lblNombreRegistro);
             groupBoxRegristrarse.Location = new Point(81, 150);
             groupBoxRegristrarse.Name = "groupBoxRegristrarse";
             groupBoxRegristrarse.Size = new Size(217, 211);
@@ -218,25 +225,36 @@
             groupBoxRegristrarse.Text = "Regristrate";
             groupBoxRegristrarse.Visible = false;
             // 
-            // pictureBoxCerrarRegistro
+            // btnCerrarRegistro
             // 
-            pictureBoxCerrarRegistro.Image = Properties.Resources.cerrar;
-            pictureBoxCerrarRegistro.Location = new Point(192, 9);
-            pictureBoxCerrarRegistro.Name = "pictureBoxCerrarRegistro";
-            pictureBoxCerrarRegistro.Size = new Size(25, 25);
-            pictureBoxCerrarRegistro.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCerrarRegistro.TabIndex = 1;
-            pictureBoxCerrarRegistro.TabStop = false;
-            pictureBoxCerrarRegistro.Click += pictureBoxCerrar_Click;
+            btnCerrarRegistro.BackgroundImage = Properties.Resources.cerrar;
+            btnCerrarRegistro.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCerrarRegistro.Location = new Point(186, 9);
+            btnCerrarRegistro.Name = "btnCerrarRegistro";
+            btnCerrarRegistro.Size = new Size(31, 31);
+            btnCerrarRegistro.TabIndex = 12;
+            btnCerrarRegistro.UseVisualStyleBackColor = true;
+            btnCerrarRegistro.Click += btnCerrar_Click;
             // 
-            // label8
+            // checkBoxContraseñaRegistroVisible
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(7, 90);
-            label8.Name = "label8";
-            label8.Size = new Size(53, 15);
-            label8.TabIndex = 11;
-            label8.Text = "Telefono";
+            checkBoxContraseñaRegistroVisible.AutoSize = true;
+            checkBoxContraseñaRegistroVisible.BackgroundImageLayout = ImageLayout.None;
+            checkBoxContraseñaRegistroVisible.Location = new Point(184, 148);
+            checkBoxContraseñaRegistroVisible.Name = "checkBoxContraseñaRegistroVisible";
+            checkBoxContraseñaRegistroVisible.Size = new Size(15, 14);
+            checkBoxContraseñaRegistroVisible.TabIndex = 12;
+            checkBoxContraseñaRegistroVisible.UseVisualStyleBackColor = true;
+            checkBoxContraseñaRegistroVisible.CheckedChanged += checkBoxContraseñaRegistroVisible_CheckedChanged;
+            // 
+            // lblTelefonoRegistro
+            // 
+            lblTelefonoRegistro.AutoSize = true;
+            lblTelefonoRegistro.Location = new Point(7, 90);
+            lblTelefonoRegistro.Name = "lblTelefonoRegistro";
+            lblTelefonoRegistro.Size = new Size(53, 15);
+            lblTelefonoRegistro.TabIndex = 11;
+            lblTelefonoRegistro.Text = "Telefono";
             // 
             // mtxtTelefono
             // 
@@ -263,14 +281,14 @@
             txtContraseñaRegistro.Size = new Size(100, 23);
             txtContraseñaRegistro.TabIndex = 12;
             // 
-            // label7
+            // lblContraseñaRegistro
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(7, 148);
-            label7.Name = "label7";
-            label7.Size = new Size(67, 15);
-            label7.TabIndex = 3;
-            label7.Text = "Contraseña";
+            lblContraseñaRegistro.AutoSize = true;
+            lblContraseñaRegistro.Location = new Point(7, 148);
+            lblContraseñaRegistro.Name = "lblContraseñaRegistro";
+            lblContraseñaRegistro.Size = new Size(67, 15);
+            lblContraseñaRegistro.TabIndex = 3;
+            lblContraseñaRegistro.Text = "Contraseña";
             // 
             // txtCorreoRegistro
             // 
@@ -279,14 +297,14 @@
             txtCorreoRegistro.Size = new Size(100, 23);
             txtCorreoRegistro.TabIndex = 13;
             // 
-            // label6
+            // lblCorreoRegistro
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(7, 117);
-            label6.Name = "label6";
-            label6.Size = new Size(43, 15);
-            label6.TabIndex = 2;
-            label6.Text = "Correo";
+            lblCorreoRegistro.AutoSize = true;
+            lblCorreoRegistro.Location = new Point(7, 117);
+            lblCorreoRegistro.Name = "lblCorreoRegistro";
+            lblCorreoRegistro.Size = new Size(43, 15);
+            lblCorreoRegistro.TabIndex = 2;
+            lblCorreoRegistro.Text = "Correo";
             // 
             // txtApellido
             // 
@@ -302,73 +320,63 @@
             txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 15;
             // 
-            // label5
+            // lblApellidoRegistro
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 61);
-            label5.Name = "label5";
-            label5.Size = new Size(51, 15);
-            label5.TabIndex = 1;
-            label5.Text = "Apellido";
+            lblApellidoRegistro.AutoSize = true;
+            lblApellidoRegistro.Location = new Point(6, 61);
+            lblApellidoRegistro.Name = "lblApellidoRegistro";
+            lblApellidoRegistro.Size = new Size(51, 15);
+            lblApellidoRegistro.TabIndex = 1;
+            lblApellidoRegistro.Text = "Apellido";
             // 
-            // label4
+            // lblNombreRegistro
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 32);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Nombre";
+            lblNombreRegistro.AutoSize = true;
+            lblNombreRegistro.Location = new Point(6, 32);
+            lblNombreRegistro.Name = "lblNombreRegistro";
+            lblNombreRegistro.Size = new Size(51, 15);
+            lblNombreRegistro.TabIndex = 0;
+            lblNombreRegistro.Text = "Nombre";
             // 
             // flowLayoutPanelOpciones
             // 
-            flowLayoutPanelOpciones.Controls.Add(groupBoxCerrarOpciones);
+            flowLayoutPanelOpciones.Controls.Add(panelCerrarOpciones);
             flowLayoutPanelOpciones.Controls.Add(btnEcommerce);
             flowLayoutPanelOpciones.Controls.Add(btnPreguntas);
             flowLayoutPanelOpciones.Controls.Add(label9);
-            flowLayoutPanelOpciones.Controls.Add(label10);
-            flowLayoutPanelOpciones.Controls.Add(linkLabel1);
-            flowLayoutPanelOpciones.Location = new Point(286, 203);
+            flowLayoutPanelOpciones.Controls.Add(lblNumeroEcommerce);
+            flowLayoutPanelOpciones.Controls.Add(linklblCorreoEcommerce);
+            flowLayoutPanelOpciones.Location = new Point(286, 196);
             flowLayoutPanelOpciones.Name = "flowLayoutPanelOpciones";
-            flowLayoutPanelOpciones.Size = new Size(96, 189);
+            flowLayoutPanelOpciones.Size = new Size(96, 196);
             flowLayoutPanelOpciones.TabIndex = 11;
             flowLayoutPanelOpciones.Visible = false;
             // 
-            // groupBoxCerrarOpciones
+            // btnAdmin
             // 
-            groupBoxCerrarOpciones.Controls.Add(pictureBoxAdmin);
-            groupBoxCerrarOpciones.Controls.Add(pictureBoxCerrarOpciones);
-            groupBoxCerrarOpciones.Location = new Point(3, 3);
-            groupBoxCerrarOpciones.Name = "groupBoxCerrarOpciones";
-            groupBoxCerrarOpciones.Size = new Size(93, 28);
-            groupBoxCerrarOpciones.TabIndex = 2;
-            groupBoxCerrarOpciones.TabStop = false;
+            btnAdmin.BackgroundImage = Properties.Resources.hacker;
+            btnAdmin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAdmin.Location = new Point(0, 2);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(31, 31);
+            btnAdmin.TabIndex = 19;
+            btnAdmin.UseVisualStyleBackColor = true;
+            btnAdmin.Click += btnAdmin_Click;
             // 
-            // pictureBoxAdmin
+            // btnCerrarOpciones
             // 
-            pictureBoxAdmin.Image = Properties.Resources.hacker;
-            pictureBoxAdmin.Location = new Point(0, 0);
-            pictureBoxAdmin.Name = "pictureBoxAdmin";
-            pictureBoxAdmin.Size = new Size(25, 25);
-            pictureBoxAdmin.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxAdmin.TabIndex = 6;
-            pictureBoxAdmin.TabStop = false;
-            pictureBoxAdmin.Click += pictureBoxAdmin_Click;
-            // 
-            // pictureBoxCerrarOpciones
-            // 
-            pictureBoxCerrarOpciones.Image = Properties.Resources.cerrar;
-            pictureBoxCerrarOpciones.Location = new Point(68, 0);
-            pictureBoxCerrarOpciones.Name = "pictureBoxCerrarOpciones";
-            pictureBoxCerrarOpciones.Size = new Size(25, 25);
-            pictureBoxCerrarOpciones.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCerrarOpciones.TabIndex = 0;
-            pictureBoxCerrarOpciones.TabStop = false;
-            pictureBoxCerrarOpciones.Click += pictureBoxCerrar_Click;
+            btnCerrarOpciones.BackgroundImage = Properties.Resources.cerrar;
+            btnCerrarOpciones.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCerrarOpciones.Location = new Point(59, 3);
+            btnCerrarOpciones.Name = "btnCerrarOpciones";
+            btnCerrarOpciones.Size = new Size(31, 31);
+            btnCerrarOpciones.TabIndex = 18;
+            btnCerrarOpciones.UseVisualStyleBackColor = true;
+            btnCerrarOpciones.Click += btnCerrar_Click;
             // 
             // btnEcommerce
             // 
-            btnEcommerce.Location = new Point(3, 37);
+            btnEcommerce.Location = new Point(3, 42);
             btnEcommerce.Name = "btnEcommerce";
             btnEcommerce.Size = new Size(93, 40);
             btnEcommerce.TabIndex = 0;
@@ -378,7 +386,7 @@
             // 
             // btnPreguntas
             // 
-            btnPreguntas.Location = new Point(3, 83);
+            btnPreguntas.Location = new Point(3, 88);
             btnPreguntas.Name = "btnPreguntas";
             btnPreguntas.Size = new Size(93, 40);
             btnPreguntas.TabIndex = 1;
@@ -390,30 +398,85 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(3, 126);
+            label9.Location = new Point(3, 131);
             label9.Name = "label9";
             label9.Size = new Size(76, 15);
             label9.TabIndex = 3;
             label9.Text = "Contactanos:";
             // 
-            // label10
+            // lblNumeroEcommerce
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(3, 141);
-            label10.Name = "label10";
-            label10.Size = new Size(86, 15);
-            label10.TabIndex = 4;
-            label10.Text = "(505)8877-9901";
+            lblNumeroEcommerce.AutoSize = true;
+            lblNumeroEcommerce.Location = new Point(3, 146);
+            lblNumeroEcommerce.Name = "lblNumeroEcommerce";
+            lblNumeroEcommerce.Size = new Size(86, 15);
+            lblNumeroEcommerce.TabIndex = 4;
+            lblNumeroEcommerce.Text = "(505)8163-9901";
             // 
-            // linkLabel1
+            // linklblCorreoEcommerce
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(3, 156);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(88, 30);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "E-Commerce@gmail.com";
+            linklblCorreoEcommerce.AutoSize = true;
+            linklblCorreoEcommerce.Location = new Point(3, 161);
+            linklblCorreoEcommerce.Name = "linklblCorreoEcommerce";
+            linklblCorreoEcommerce.Size = new Size(88, 30);
+            linklblCorreoEcommerce.TabIndex = 5;
+            linklblCorreoEcommerce.TabStop = true;
+            linklblCorreoEcommerce.Text = "E-Commerce@gmail.com";
+            // 
+            // btnConfig
+            // 
+            btnConfig.BackColor = SystemColors.ButtonHighlight;
+            btnConfig.BackgroundImage = Properties.Resources.config;
+            btnConfig.BackgroundImageLayout = ImageLayout.Stretch;
+            btnConfig.Location = new Point(324, 364);
+            btnConfig.Name = "btnConfig";
+            btnConfig.Size = new Size(54, 31);
+            btnConfig.TabIndex = 20;
+            btnConfig.UseVisualStyleBackColor = false;
+            btnConfig.Click += btnConfig_Click;
+            // 
+            // pictureBoxMascotaSaluda
+            // 
+            pictureBoxMascotaSaluda.Image = Properties.Resources.SaludoMascoteE_Commerce;
+            pictureBoxMascotaSaluda.Location = new Point(0, 33);
+            pictureBoxMascotaSaluda.Name = "pictureBoxMascotaSaluda";
+            pictureBoxMascotaSaluda.Size = new Size(139, 140);
+            pictureBoxMascotaSaluda.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMascotaSaluda.TabIndex = 21;
+            pictureBoxMascotaSaluda.TabStop = false;
+            // 
+            // panelSuperior
+            // 
+            panelSuperior.BackColor = SystemColors.ActiveCaption;
+            panelSuperior.Controls.Add(lblTitulo);
+            panelSuperior.Dock = DockStyle.Top;
+            panelSuperior.ForeColor = Color.Transparent;
+            panelSuperior.Location = new Point(0, 0);
+            panelSuperior.Name = "panelSuperior";
+            panelSuperior.Size = new Size(384, 32);
+            panelSuperior.TabIndex = 22;
+            // 
+            // panelGeneral
+            // 
+            panelGeneral.BackColor = SystemColors.Menu;
+            panelGeneral.Controls.Add(groupBoxRegristrarse);
+            panelGeneral.Controls.Add(btnConfig);
+            panelGeneral.Controls.Add(pictureBoxMascotaSaluda);
+            panelGeneral.Controls.Add(pictureBoxLogo);
+            panelGeneral.Dock = DockStyle.Fill;
+            panelGeneral.Location = new Point(0, 0);
+            panelGeneral.Name = "panelGeneral";
+            panelGeneral.Size = new Size(384, 395);
+            panelGeneral.TabIndex = 23;
+            // 
+            // panelCerrarOpciones
+            // 
+            panelCerrarOpciones.Controls.Add(btnCerrarOpciones);
+            panelCerrarOpciones.Controls.Add(btnAdmin);
+            panelCerrarOpciones.Location = new Point(3, 3);
+            panelCerrarOpciones.Name = "panelCerrarOpciones";
+            panelCerrarOpciones.Size = new Size(93, 33);
+            panelCerrarOpciones.TabIndex = 22;
             // 
             // FormInicio
             // 
@@ -421,68 +484,70 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 395);
             Controls.Add(flowLayoutPanelOpciones);
-            Controls.Add(groupBoxRegristrarse);
-            Controls.Add(label1);
             Controls.Add(groupBoxInicioDeSesion);
-            Controls.Add(pictureBoxConfig);
             Controls.Add(btnIniciarSesion);
             Controls.Add(btnRegistrase);
-            Controls.Add(pictureBoxLogo);
+            Controls.Add(panelSuperior);
+            Controls.Add(panelGeneral);
             Name = "FormInicio";
             Text = "Incio de sesión";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxConfig).EndInit();
             groupBoxInicioDeSesion.ResumeLayout(false);
             groupBoxInicioDeSesion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarInicioSesion).EndInit();
             groupBoxRegristrarse.ResumeLayout(false);
             groupBoxRegristrarse.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarRegistro).EndInit();
             flowLayoutPanelOpciones.ResumeLayout(false);
             flowLayoutPanelOpciones.PerformLayout();
-            groupBoxCerrarOpciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAdmin).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarOpciones).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMascotaSaluda).EndInit();
+            panelSuperior.ResumeLayout(false);
+            panelSuperior.PerformLayout();
+            panelGeneral.ResumeLayout(false);
+            panelCerrarOpciones.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label lblTitulo;
         private PictureBox pictureBoxLogo;
         private Button btnRegistrase;
         private Button btnIniciarSesion;
         private PictureBox pictureBoxConfig;
         private GroupBox groupBoxInicioDeSesion;
         private Button btnEntrar;
-        private PictureBox pictureBoxCerrarInicioSesion;
-        private Label label3;
-        private Label label2;
+        private Label lblCorrreoInicioSesion;
+        private Label lblContraseInicioSesion;
         private TextBox txtCorreo;
         private TextBox txtContraseña;
         private ToolTip toolTip1;
         private GroupBox groupBoxRegristrarse;
-        private Label label4;
-        private Label label7;
-        private Label label6;
-        private Label label5;
+        private Label lblNombreRegistro;
+        private Label lblContraseñaRegistro;
+        private Label lblCorreoRegistro;
+        private Label lblApellidoRegistro;
         private TextBox txtContraseñaRegistro;
         private TextBox txtCorreoRegistro;
         private TextBox txtApellido;
         private TextBox txtNombre;
         private Button btnTerminarRegistro;
-        private Label label8;
+        private Label lblTelefonoRegistro;
         private MaskedTextBox mtxtTelefono;
         private FlowLayoutPanel flowLayoutPanelOpciones;
         private Button btnEcommerce;
         private Button btnPreguntas;
-        private GroupBox groupBoxCerrarOpciones;
-        private PictureBox pictureBoxCerrarOpciones;
-        private PictureBox pictureBoxCerrarRegistro;
         private Label label9;
-        private Label label10;
-        private LinkLabel linkLabel1;
-        private PictureBox pictureBoxAdmin;
+        private Label lblNumeroEcommerce;
+        private LinkLabel linklblCorreoEcommerce;
+        private CheckBox checkBoxContraseñaRegistroVisible;
+        private Button btnCerrarRegistro;
+        private Button btnCerrarInicioSesion;
+        private Button btnCerrarOpciones;
+        private Button btnAdmin;
+        private Button btnConfig;
+        private PictureBox pictureBoxMascotaSaluda;
+        private Panel panelSuperior;
+        private Panel panelGeneral;
+        private CheckBox checkBoxContraseñaInicioDeSesionVisible;
+        private Panel panelCerrarOpciones;
     }
 }

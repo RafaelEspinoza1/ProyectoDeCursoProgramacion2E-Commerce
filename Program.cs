@@ -22,12 +22,16 @@ namespace ProyectoDeCursoE_commerce
                 {
                     "FormInicio" => new FormInicio(),
                     "PaginaPrincipal" => new PaginaPrincipal(),
-                    "Administrador" => new Administrador(),
+                    "Administracion" => new Administracion(),
                     _ => null
                 };
 
                 if (formularioActual == null)
                     break;
+                if (siguienteForm == "Administracion")
+                {
+                    formularioActual.Size = new Size(309, 184); // Tamaño especial para Administrador
+                }
 
                 DialogResult resultado = formularioActual.ShowDialog();
 

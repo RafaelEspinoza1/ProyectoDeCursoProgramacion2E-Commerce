@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace ProyectoDeCursoE_commerce.Models
 {
-    public class Usuarios
+    public class Administrador
     {
         [Key]
-        public int UsuarioId { get; set; }
+        public int AdministradorId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Correo { get; set; }
         public string Contraseña { get; set; }
-        public string Telefono { get; set; }
-
-       
     }
 }
