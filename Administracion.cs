@@ -26,6 +26,7 @@ namespace ProyectoDeCursoE_commerce
             txtContraseñaAdmin.UseSystemPasswordChar = true;
             txtContraseñaAdmin.ContextMenuStrip = null; // Desactiva click derecho
             txtContraseñaAdmin.ShortcutsEnabled = false; // Desactiva Ctrl+C, Ctrl+X, Ctrl+V
+            flpImagenes.AutoScroll = true;
 
         }
         private void CargarDatos()
@@ -199,7 +200,77 @@ namespace ProyectoDeCursoE_commerce
 
         private async void btnRefrescar_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del producto seleccionado
+                int productoId = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["ProductoId"].Value);
+
+                // Llamar método para mostrar imágenes
+                MostrarImagenesProducto(productoId);
+                lblImagenesProducto.Text = "Imágenes del producto seleccionado:"; 
+            }
+        }
+        private void MostrarImagenesProducto(int productoId)
+        {
+            // Limpiar imágenes anteriores
+            flpImagenes.Controls.Clear();
+
+            // Obtener las imágenes del producto desde la base de datos
+            var imagenes = db.ImagenesProducto
+                             .Where(img => img.ProductoId == productoId)
+                             .ToList();
+
+            foreach (var imagen in imagenes)
+            {
+                PictureBox pic = new PictureBox();
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.Width = 120;
+                pic.Height = 120;
+
+                // Cargar imagen desde byte[]
+                using (var ms = new MemoryStream(imagen.Imagen))
+                {
+                    pic.Image = Image.FromStream(ms);
+                }
+
+                // Guardar los bytes en el Tag para mostrarlos ampliados al hacer clic
+                pic.Tag = imagen.Imagen;
+                pic.Cursor = Cursors.Hand;
+                pic.Click += Pic_Click;
+
+                flpImagenes.Controls.Add(pic);
+            }
+        }
+        private void Pic_Click(object sender, EventArgs e)
+        {
+            PictureBox pic = sender as PictureBox;
+            if (pic?.Tag is byte[] imagenBytes)
+            {
+                using (var ms = new MemoryStream(imagenBytes))
+                {
+                    Image imagenGrande = Image.FromStream(ms);
+
+                    Form frmImagen = new Form();
+                    frmImagen.Text = "Vista ampliada";
+                    frmImagen.Width = 800;
+                    frmImagen.Height = 600;
+
+                    PictureBox picGrande = new PictureBox();
+                    picGrande.Dock = DockStyle.Fill;
+                    picGrande.SizeMode = PictureBoxSizeMode.Zoom;
+                    picGrande.Image = imagenGrande;
+
+                    frmImagen.Controls.Add(picGrande);
+                    frmImagen.ShowDialog();
+                }
+            }
+        }
+
+
     }
 }

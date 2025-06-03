@@ -57,8 +57,9 @@
             lblNombreRegistro = new Label();
             toolTip1 = new ToolTip(components);
             flowLayoutPanelOpciones = new FlowLayoutPanel();
-            btnAdmin = new Button();
+            panelCerrarOpciones = new Panel();
             btnCerrarOpciones = new Button();
+            btnAdmin = new Button();
             btnEcommerce = new Button();
             btnPreguntas = new Button();
             label9 = new Label();
@@ -68,15 +69,14 @@
             pictureBoxMascotaSaluda = new PictureBox();
             panelSuperior = new Panel();
             panelGeneral = new Panel();
-            panelCerrarOpciones = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             groupBoxInicioDeSesion.SuspendLayout();
             groupBoxRegristrarse.SuspendLayout();
             flowLayoutPanelOpciones.SuspendLayout();
+            panelCerrarOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMascotaSaluda).BeginInit();
             panelSuperior.SuspendLayout();
             panelGeneral.SuspendLayout();
-            panelCerrarOpciones.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitulo
@@ -259,7 +259,7 @@
             // mtxtTelefono
             // 
             mtxtTelefono.Location = new Point(80, 82);
-            mtxtTelefono.Mask = "0000-0000";
+            mtxtTelefono.Mask = "00000000";
             mtxtTelefono.Name = "mtxtTelefono";
             mtxtTelefono.Size = new Size(100, 23);
             mtxtTelefono.TabIndex = 12;
@@ -352,16 +352,14 @@
             flowLayoutPanelOpciones.TabIndex = 11;
             flowLayoutPanelOpciones.Visible = false;
             // 
-            // btnAdmin
+            // panelCerrarOpciones
             // 
-            btnAdmin.BackgroundImage = Properties.Resources.hacker;
-            btnAdmin.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAdmin.Location = new Point(0, 2);
-            btnAdmin.Name = "btnAdmin";
-            btnAdmin.Size = new Size(31, 31);
-            btnAdmin.TabIndex = 19;
-            btnAdmin.UseVisualStyleBackColor = true;
-            btnAdmin.Click += btnAdmin_Click;
+            panelCerrarOpciones.Controls.Add(btnCerrarOpciones);
+            panelCerrarOpciones.Controls.Add(btnAdmin);
+            panelCerrarOpciones.Location = new Point(3, 3);
+            panelCerrarOpciones.Name = "panelCerrarOpciones";
+            panelCerrarOpciones.Size = new Size(93, 33);
+            panelCerrarOpciones.TabIndex = 22;
             // 
             // btnCerrarOpciones
             // 
@@ -373,6 +371,17 @@
             btnCerrarOpciones.TabIndex = 18;
             btnCerrarOpciones.UseVisualStyleBackColor = true;
             btnCerrarOpciones.Click += btnCerrar_Click;
+            // 
+            // btnAdmin
+            // 
+            btnAdmin.BackgroundImage = Properties.Resources.hacker;
+            btnAdmin.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAdmin.Location = new Point(0, 2);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(31, 31);
+            btnAdmin.TabIndex = 19;
+            btnAdmin.UseVisualStyleBackColor = true;
+            btnAdmin.Click += btnAdmin_Click;
             // 
             // btnEcommerce
             // 
@@ -469,15 +478,6 @@
             panelGeneral.Size = new Size(384, 395);
             panelGeneral.TabIndex = 23;
             // 
-            // panelCerrarOpciones
-            // 
-            panelCerrarOpciones.Controls.Add(btnCerrarOpciones);
-            panelCerrarOpciones.Controls.Add(btnAdmin);
-            panelCerrarOpciones.Location = new Point(3, 3);
-            panelCerrarOpciones.Name = "panelCerrarOpciones";
-            panelCerrarOpciones.Size = new Size(93, 33);
-            panelCerrarOpciones.TabIndex = 22;
-            // 
             // FormInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -498,11 +498,11 @@
             groupBoxRegristrarse.PerformLayout();
             flowLayoutPanelOpciones.ResumeLayout(false);
             flowLayoutPanelOpciones.PerformLayout();
+            panelCerrarOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxMascotaSaluda).EndInit();
             panelSuperior.ResumeLayout(false);
             panelSuperior.PerformLayout();
             panelGeneral.ResumeLayout(false);
-            panelCerrarOpciones.ResumeLayout(false);
             ResumeLayout(false);
         }
 

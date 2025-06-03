@@ -1,7 +1,12 @@
+using ProyectoDeCursoE_commerce.Data;
+using ProyectoDeCursoE_commerce.Models;
+
 namespace ProyectoDeCursoE_commerce
 {
     public partial class FormInicio : Form
     {
+        private ECommerceContext db = new ECommerceContext();
+        public Usuarios NuevoUsuario { get; private set; }
         public FormInicio()
         {
             InitializeComponent();
@@ -109,6 +114,14 @@ namespace ProyectoDeCursoE_commerce
                 return;
             }
 
+            // Consultar en la base de datos usando Entity Framework
+            var usuario = db.Usuarios.FirstOrDefault(u => u.Correo == correo && u.Contraseña == contraseña);
+
+            if (usuario == null)
+            {
+                MessageBox.Show("Correo o contraseña incorrectos.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Si pasa todas las validaciones
             MessageBox.Show("Bienvenido a E-Commerce", "Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Tag = "PaginaPrincipal";
@@ -163,9 +176,26 @@ namespace ProyectoDeCursoE_commerce
                 txtCorreo.Focus();
                 return;
             }
+            
+            if (db.Usuarios.Any(u => u.Correo == correo) || db.Usuarios.Any(u => u.Telefono == telefono))
+            {
+                MessageBox.Show("Ya hay un usuario con ese correo o numero de telefono, ingrese otros. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCorreoRegistro.Focus();
+                return;
+            }
+            NuevoUsuario = new Usuarios
+            {
+                Nombre = nombre,
+                Apellido = apellido,
+                Correo = correo,
+                Contraseña = contraseña,
+                Telefono = telefono
+            };
+            db.Usuarios.Add(NuevoUsuario);
+            db.SaveChanges();
 
             // Si pasa todas las validaciones
-            MessageBox.Show("Bienvenido a E-Commerce", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Registro exitoso. Bienvenido a E-Commerce", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Tag = "PaginaPrincipal";
             this.DialogResult = DialogResult.OK;
             this.Close();

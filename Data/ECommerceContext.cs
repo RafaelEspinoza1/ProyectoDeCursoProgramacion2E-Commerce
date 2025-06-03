@@ -14,7 +14,7 @@ namespace ProyectoDeCursoE_commerce.Data
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Vendedores> Vendedores { get; set; }
         public DbSet<Productos> Productos { get; set; }
-        public DbSet<ImagenProducto> ImagenesProductos { get; set; }
+        public DbSet<ImagenProducto> ImagenesProducto { get; set; }
         public DbSet<Compras> Compras { get; set; }
         public DbSet<Administrador> Administrador { get; set; }
         public DbSet<IngresosECommerce> IngresosECommerce { get; set; }

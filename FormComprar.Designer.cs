@@ -37,7 +37,7 @@
             radioButtonPrecio = new RadioButton();
             btnListo = new Button();
             cbxBuscar = new ComboBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flpProductos = new FlowLayoutPanel();
             flowLayoutPanelFiltros.SuspendLayout();
             SuspendLayout();
             // 
@@ -128,26 +128,26 @@
             cbxBuscar.Size = new Size(121, 23);
             cbxBuscar.TabIndex = 4;
             // 
-            // flowLayoutPanel1
+            // flpProductos
             // 
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 42);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(800, 322);
-            flowLayoutPanel1.TabIndex = 5;
+            flpProductos.Dock = DockStyle.Bottom;
+            flpProductos.Location = new Point(0, 42);
+            flpProductos.Name = "flpProductos";
+            flpProductos.Size = new Size(800, 322);
+            flpProductos.TabIndex = 5;
             // 
-            // Comprar
+            // FormComprar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 364);
             Controls.Add(flowLayoutPanelFiltros);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(flpProductos);
             Controls.Add(cbxBuscar);
             Controls.Add(btnFiltros);
             Controls.Add(btnBuscar);
             Controls.Add(txtBuscar);
-            Name = "Comprar";
+            Name = "FormComprar";
             Text = "Comprar";
             flowLayoutPanelFiltros.ResumeLayout(false);
             flowLayoutPanelFiltros.PerformLayout();
@@ -166,6 +166,6 @@
         private RadioButton radioButtonPrecio;
         private Button btnListo;
         private ComboBox cbxBuscar;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flpProductos;
     }
 }

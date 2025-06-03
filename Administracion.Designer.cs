@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administracion));
             lblContraseña1 = new Label();
             txtContraseña1 = new TextBox();
@@ -57,9 +56,10 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            lblImagenesProducto = new Label();
+            flpImagenes = new FlowLayoutPanel();
             tabPage3 = new TabPage();
             lblIngresosECommece = new Label();
-            imageList1 = new ImageList(components);
             progressBarCarga = new ProgressBar();
             btnRefrescar = new Button();
             groupBoxIngresar.SuspendLayout();
@@ -252,9 +252,12 @@
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Location = new Point(8, 21);
+            dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.Size = new Size(955, 180);
             dgvProductos.TabIndex = 25;
+            dgvProductos.SelectionChanged += dgvProductos_SelectionChanged;
             // 
             // lblVendedores
             // 
@@ -329,6 +332,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(lblImagenesProducto);
+            tabPage2.Controls.Add(flpImagenes);
             tabPage2.Controls.Add(dgvProductos);
             tabPage2.Controls.Add(lblProductos);
             tabPage2.Location = new Point(4, 24);
@@ -338,6 +343,22 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Productos";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblImagenesProducto
+            // 
+            lblImagenesProducto.AutoSize = true;
+            lblImagenesProducto.Location = new Point(19, 227);
+            lblImagenesProducto.Name = "lblImagenesProducto";
+            lblImagenesProducto.Size = new Size(276, 15);
+            lblImagenesProducto.TabIndex = 30;
+            lblImagenesProducto.Text = "Seleccione un producto para mostrar sus imagenes";
+            // 
+            // flpImagenes
+            // 
+            flpImagenes.Location = new Point(8, 245);
+            flpImagenes.Name = "flpImagenes";
+            flpImagenes.Size = new Size(522, 145);
+            flpImagenes.TabIndex = 29;
             // 
             // tabPage3
             // 
@@ -362,12 +383,6 @@
             lblIngresosECommece.Size = new Size(181, 15);
             lblIngresosECommece.TabIndex = 32;
             lblIngresosECommece.Text = "Ingresos totales de E-Commerce:";
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageSize = new Size(16, 16);
-            imageList1.TransparentColor = Color.Transparent;
             // 
             // progressBarCarga
             // 
@@ -457,9 +472,10 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private ImageList imageList1;
         private Label lblIngresosECommece;
         private ProgressBar progressBarCarga;
         private Button btnRefrescar;
+        private Label lblImagenesProducto;
+        private FlowLayoutPanel flpImagenes;
     }
 }
