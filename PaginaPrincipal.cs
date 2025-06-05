@@ -22,10 +22,16 @@ namespace ProyectoDeCursoE_commerce
         {
             try
             {
-                MessageBox.Show("E-Commerce le desea buen dia, vuelva pronto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Tag = "FormInicio";
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+               var cerrar = MessageBox.Show("Seguro que desea cerrar seción?", "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if( cerrar == DialogResult.Yes)
+                {
+                    MessageBox.Show("E-Commerce le desea buen dia, vuelva pronto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Tag = "FormInicio";
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    return;
+                }
+                    
             }
             catch (Exception ex)
             {

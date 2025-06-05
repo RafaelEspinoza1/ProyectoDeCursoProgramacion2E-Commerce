@@ -13,7 +13,7 @@ namespace ProyectoDeCursoE_commerce.Models
         public int VendedorId { set; get; }
         public string NumeroDeCuenta { set; get; }
         public decimal Ingresos { set; get; }
-        public int UsuarioID { set; get; }
+        public int UsuarioId { set; get; }
         public string direccionOrigen { set; get; }
         public double LatitudOrigen { get; set; }
         public double LongitudOrigen { get; set; }

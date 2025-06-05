@@ -40,7 +40,7 @@ namespace ProyectoDeCursoE_commerce
                         v.VendedorId,
                         v.NumeroDeCuenta,
                         v.Ingresos,
-                        v.UsuarioID,
+                        v.UsuarioId,
                         v.Usuario.Nombre,
                         v.direccionOrigen,
                         v.LatitudOrigen,
@@ -144,6 +144,17 @@ namespace ProyectoDeCursoE_commerce
         {
             try
             {
+                var administrador = db.Administrador.FirstOrDefault(a => a.Contraseña == txtContraseñaAdmin.Text && a.Correo == txtCorreoAdmin.Text);
+                if (string.IsNullOrWhiteSpace(txtContraseñaAdmin.Text)|| string.IsNullOrWhiteSpace(txtCorreoAdmin.Text))
+                {
+                    MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (administrador == null)
+                {
+                    MessageBox.Show("Correo o contraseña incorrectos. Si no es el admin no va a lograr entrar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 MessageBox.Show("Cargando datos, espere un momento...", "Cargando", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 progressBarCarga.Visible = true;
@@ -158,6 +169,10 @@ namespace ProyectoDeCursoE_commerce
                 progressBarCarga.Visible = false;
 
                 MessageBox.Show("Datos cargados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Size = new Size(1386, 671);
+                groupBoxIngresar.Visible = false;
+                btnCerrar.Visible = false;
+                tabControl1.Visible = true;
             }
             catch (Exception ex)
             {
@@ -165,10 +180,7 @@ namespace ProyectoDeCursoE_commerce
                 MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.Size = new Size(1386, 671);
-            groupBoxIngresar.Visible = false;
-            btnCerrar.Visible = false;
-            tabControl1.Visible = true;
+            
 
         }
         private void checkBoxContraseña1Visible_CheckedChanged(object sender, EventArgs e)
@@ -200,7 +212,7 @@ namespace ProyectoDeCursoE_commerce
 
         private async void btnRefrescar_Click(object sender, EventArgs e)
         {
-
+            CargarDatos();
         }
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)

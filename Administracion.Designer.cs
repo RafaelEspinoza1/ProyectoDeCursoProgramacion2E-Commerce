@@ -398,7 +398,7 @@
             // 
             btnRefrescar.BackgroundImage = Properties.Resources.reinciar;
             btnRefrescar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnRefrescar.Location = new Point(503, 5);
+            btnRefrescar.Location = new Point(539, 1);
             btnRefrescar.Name = "btnRefrescar";
             btnRefrescar.Size = new Size(31, 31);
             btnRefrescar.TabIndex = 34;

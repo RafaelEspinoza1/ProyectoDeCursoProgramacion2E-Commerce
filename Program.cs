@@ -14,7 +14,7 @@ namespace ProyectoDeCursoE_commerce
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Metodo para que cuando se abra el form PaginaPrincipal, se cierre el form FormInicio, y vicebersa, y que cuando se entre al form DatoaDeEcommerce se cierre FormInicio y pase este como pricipal.
-            string siguienteForm = "FormInicio";
+            string siguienteForm = "PaginaPrincipal";
 
             while (true)
             {

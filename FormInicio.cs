@@ -7,6 +7,8 @@ namespace ProyectoDeCursoE_commerce
     {
         private ECommerceContext db = new ECommerceContext();
         public Usuarios NuevoUsuario { get; private set; }
+        public static int UsuarioId { get; private set; } // Para almacenar el ID del usuario actual
+
         public FormInicio()
         {
             InitializeComponent();
